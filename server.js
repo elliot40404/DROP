@@ -1,15 +1,17 @@
 const express = require('express');
 const fs = require('fs');
-// const upload = require('express-fileupload');
 const app = express();
 const PORT = 80;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
-// app.use(upload());
+
 if (!fs.existsSync('./public/uploads')) {
     fs.mkdirSync('./public/uploads');
+}
+if (!fs.existsSync('./logs')) {
+    fs.mkdirSync('./logs');
 }
 
 app.get('/', (req, res) => {
