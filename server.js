@@ -2,9 +2,10 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const PORT = 80;
+const IP = "192.168.0.8";
 
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false, limit: '150mb' }));
 app.use(express.static(__dirname + '/public'));
 
 if (!fs.existsSync('./public/uploads')) {
@@ -67,6 +68,6 @@ app.post('/', async (req, res) => {
     }
 });
 // configure settings for file and mobile view css and size limit
-app.listen(PORT, () => {
-    console.log(`server started on port ${PORT}`);
+app.listen(PORT, IP, () => {
+    console.log(`Server started on port ${PORT} at http://${IP}`);
 })
