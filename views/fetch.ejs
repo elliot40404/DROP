@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DROP-SERVER</title>
+    <link rel='stylesheet' href='./../css/main.css'>
+</head>
+<body>
+    <div class="cont">
+        <div id="nav" class="nav">
+            <a href="/">DROP</a>
+            <a href="#" class="active">FETCH</a>
+        </div>
+        <header>
+            <div class="box">
+                <h1>DROP SERVER</h1>
+            </div>
+        </header>
+        <% if (contents) { %>
+            <div class="main">
+                <% contents.forEach(element=> { %>
+                    <a href="./../uploads/<%= element %>" download="<%= element %>">
+                        <img src="./../uploads/<%= element %>" alt="<%= element %>">
+                    </a>
+                <% }) %>
+                <!-- write a else statement for empty dir -->
+            </div>
+        <% } %>
+        <footer>
+            <p>RPI SERVER</p>
+        </footer>
+    </div>
+</body>
+</html>
