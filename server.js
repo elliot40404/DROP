@@ -24,7 +24,6 @@ app.get('/fetch', (req, res) => {
         if (err) {
             console.log(err)
         } else {
-            // contents.forEach((file) => console.log(file));
             res.render('fetch', { contents: contents });
         }
     });
@@ -46,19 +45,19 @@ app.post('/', async (req, res) => {
     try {
         const files = await req.body.file;
         if (files == null) return
-        const cover = JSON.parse(files)
+        const cover = JSON.parse(files);
+        const upath = __dirname + '/logs/';
+        const ipath = __dirname + '/public/uploads/';
         if (files != null) {
             const image = new Buffer.from(cover.data, 'base64');
-            const upath = __dirname + '/logs/';
-            const ipath = __dirname + '/public/uploads/';
             const deets = {
                 id: cover.id,
                 name: cover.name,
                 type: cover.type,
                 size: (cover.size / 1024).toFixed(2)
             }
-            const fileName = cover.id + '.' + cover.type.split('/')[1];
-            fs.writeFileSync(upath + 'names.txt', JSON.stringify(deets) + '\n', { flag: 'a+' });
+            const fileName = cover.id + '.' + cover.name.split('.')[1];
+            fs.writeFileSync(upath + 'logs.txt', JSON.stringify(deets) + '\n', { flag: 'a+' });
             fs.writeFileSync(ipath + fileName, image, { flag: 'a+' });
         }
         res.redirect('/uploaded');
@@ -67,7 +66,7 @@ app.post('/', async (req, res) => {
         res.redirect('/error');
     }
 });
-// configure settings for file and mobile view css and size limit
+// mobile view css.
 app.listen(PORT, IP, () => {
     console.log(`Server started on port ${PORT} at http://${IP}`);
-})
+});
