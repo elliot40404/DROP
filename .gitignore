@@ -1,5 +1,5 @@
 node_modules
 *.scss
 uploads
-names.txt
+logs.txt
 *.test.js

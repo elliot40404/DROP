@@ -34,7 +34,7 @@ app.get('/uploaded', (req, res) => {
 });
 
 app.get('/logs', (req, res) => {
-    res.sendFile(__dirname + '/logs/names.txt');
+    res.sendFile(__dirname + '/logs/logs.txt');
 });
 
 app.get('/error', (req, res) => {
@@ -56,7 +56,7 @@ app.post('/', async (req, res) => {
                 type: cover.type,
                 size: (cover.size / 1024).toFixed(2)
             }
-            const fileName = cover.id + '.' + cover.name.split('.')[1];
+            const fileName = cover.name.split('.')[0] + '_' + cover.id + '.' + cover.name.split('.')[1];
             fs.writeFileSync(upath + 'logs.txt', JSON.stringify(deets) + '\n', { flag: 'a+' });
             fs.writeFileSync(ipath + fileName, image, { flag: 'a+' });
         }
