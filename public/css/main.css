@@ -160,3 +160,21 @@ p {
   width: 100px;
 
 }
+.error {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./../assets/404.png');
+  font-family: 'Montserrat', sans-serif;
+}
+
+.error h1 {
+  color: #f00;
+  font-size: 40px;
+  position: absolute;
+  top: 70%;
+  left: 45%;
+}
+
+.error h1:hover {
+  color: rgb(200, 255, 0);
+}

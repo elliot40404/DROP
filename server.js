@@ -67,6 +67,10 @@ app.post('/', async (req, res) => {
     }
 });
 // mobile view css.
+app.get('/:id', (req, res) => {
+    res.render('404');
+});
+
 app.listen(PORT, IP, () => {
     console.log(`Server started on port ${PORT} at http://${IP}`);
 });
