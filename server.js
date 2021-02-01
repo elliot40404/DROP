@@ -66,7 +66,7 @@ app.post('/', async (req, res) => {
         res.redirect('/error');
     }
 });
-// mobile view css.
+
 app.get('/:id', (req, res) => {
     res.render('404');
 });
