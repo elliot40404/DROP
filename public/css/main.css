@@ -91,16 +91,35 @@ form button {
 }
 
 .main {
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
   color: #fff;
-  font-size: 24px;
+  font-size: 16px;
+}
+.main .card {
+  font-family: 'Montserrat', sans-serif;
+  height: 150px;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.589);
+  text-align: center;
+  border-radius: 36px;
+  overflow-wrap: break-word;
+}
+.main a {
+  color: #fff;
 }
 p {
   color: #fff;
-  font-size: 24px;
+  font-size: 16px;
+  padding: 20px 10px;
 }
 .main img {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   
 }
 .error {

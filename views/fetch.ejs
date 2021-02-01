@@ -20,11 +20,14 @@
         <% if (contents) { %>
             <div class="main">
                 <% contents.forEach(element=> { %>
-                    <a href="./../uploads/<%= element %>" download="<%= element %>">
-                        <img src="./../uploads/<%= element %>" alt="<%= element %>">
+                    <a class="card" href="./../uploads/<%= element %>" download="<%= element %>">
+                        <% if (element.split('.')[1] == 'png' || element.split('.')[1] == 'jpg' || element.split('.')[1] == 'jpeg' || element.split('.')[1] == 'gif') { %> 
+                            <img src="./../uploads/<%= element %>" alt="<%= element %>">
+                        <% } else { %> 
+                            <p><%= element %> </p>
+                        <% } %> 
                     </a>
                 <% }) %>
-                <!-- write a else statement for empty dir -->
             </div>
         <% } %>
     </div>
