@@ -71,7 +71,6 @@ header .box {
 }
 
 main {
-  background: red;
   height: 10vh;
   width: 30vw;
   border-radius: 50px;
@@ -80,37 +79,6 @@ main {
   cursor: pointer;
 }
 
-main h1 {
-  font-family: 'Montserrat',
-  sans-serif;
-  position: absolute;
-  color: #fff;
-  font-size: 3rem;
-  z-index: 5;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-main .drop {
-  height: 100%;
-  width: 100%;
-  background-image: url(./../assets/bg2.png);
-  background-position: center;
-  background-size: cover;
-  border-radius: 50px;
-  -webkit-filter: blur(30px);
-  filter: blur(30px);
-}
-
-main .drop .overlay {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
-  position: absolute;
-} 
-
 form button {
   position: absolute;
   right: -100px;
@@ -118,6 +86,8 @@ form button {
   height: 10vh;
   width: 10vh;
   border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.644);
+  color: #fff;
 }
 
 .main {
@@ -157,5 +127,26 @@ p {
   header .box {
     font-size: 1rem;
     border: 5px solid white;
+  }
+  main {
+    width: 100%;
+    margin: 100px 0px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+  }
+  .filepond {
+    width: 70% !important;
+    margin: 0px 10px;
+  }
+  form button {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.644);
+    color: #fff;
   }
 }
